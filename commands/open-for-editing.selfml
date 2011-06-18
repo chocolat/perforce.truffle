@@ -1,0 +1,13 @@
+(trigger
+    (key [[ctrl][shift]$]))
+
+(name [Open for Editing])
+
+(input nothing)
+
+(output tooltip)
+
+(save nothing)
+
+(script ["${TM_P4:=p4}" edit "$TM_FILEPATH"
+])

@@ -1,0 +1,13 @@
+(trigger
+    (key [[ctrl][shift]$]))
+
+(name Annotate)
+
+(input nothing)
+
+(output new-document)
+
+(save nothing)
+
+(script ["${TM_P4:=p4}" annotate -c -i -q "$TM_FILEPATH"
+])

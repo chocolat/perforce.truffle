@@ -1,0 +1,22 @@
+(trigger
+    (key [[ctrl][shift]$]))
+
+(name [Offline Open For Editing])
+
+(input nothing)
+
+(output tooltip)
+
+(save nothing)
+
+(script [# record a file that we're editing offline for later
+# (presumably when access to Perforce is restored)
+
+# first, unlock the file if we need to unlock it
+chmod +r "$TM_FILEPATH"
+/Developer/Tools/SetFile -a l "$TM_FILEPATH"
+
+# now record the file
+mkdir -p "$HOME/P4Cache"
+echo "$TM_FILEPATH" >> "$HOME/P4Cache/OfflineEdits.txt";
+])

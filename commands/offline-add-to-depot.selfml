@@ -1,0 +1,18 @@
+(trigger
+    (key [[ctrl][shift]$]))
+
+(name [Offline Add to Depot])
+
+(input nothing)
+
+(output tooltip)
+
+(save nothing)
+
+(script [# record a file that we're editing offline for later
+# (presumably when access to Perforce is restored)
+
+# now record the file
+mkdir -p "$HOME/P4Cache"
+echo "$TM_FILEPATH" >> "$HOME/P4Cache/OfflineAdds.txt";
+])

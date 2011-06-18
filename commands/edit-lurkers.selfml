@@ -1,0 +1,13 @@
+(trigger
+    (key [[ctrl][shift]$]))
+
+(name [Edit Lurkers])
+
+(input nothing)
+
+(output new-document)
+
+(save nothing)
+
+(script [cd $TM_PROJECT_DIRECTORY
+"${TM_P4:=p4}" diff -se ./... | "${TM_P4:=p4}" -x - edit])

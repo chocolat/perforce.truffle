@@ -1,0 +1,16 @@
+(trigger
+    (key [[ctrl][shift]$]))
+
+(name [Revert to Latest])
+
+(input nothing)
+
+(output tooltip)
+
+(save nothing)
+
+(script ["${TM_P4:=p4}" revert "$TM_FILEPATH"
+
+# force TM to refresh the current file..
+rescan_project
+])

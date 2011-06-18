@@ -1,0 +1,13 @@
+(trigger
+    (key [[ctrl][shift]$]))
+
+(name [Add to Depot])
+
+(input nothing)
+
+(output tooltip)
+
+(save nothing)
+
+(script ["${TM_P4:=p4}" add "$TM_FILEPATH"
+])

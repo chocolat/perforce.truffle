@@ -1,0 +1,22 @@
+(trigger
+    (key [[ctrl][shift]$]))
+
+(name [Offline Send Offline Edits])
+
+(input nothing)
+
+(output tooltip)
+
+(save nothing)
+
+(script [
+# if we have offline edits, send them now (assumes we're actually online again)
+if [[ -e  "$HOME/P4Cache/OfflineEdits.txt" ]]; then
+	"$TM_P4" -x "$HOME/P4Cache/OfflineEdits.txt" edit && rm "$HOME/P4Cache/OfflineEdits.txt"
+fi
+
+# if we have offline adds, send them now (assumes we're actually online again)
+if [ -e  "$HOME/P4Cache/OfflineAdds.txt" ]; then
+	"$TM_P4" -x add "$HOME/P4Cache/OfflineAdds.txt" && rm "$HOME/P4Cache/OfflineAdds.txt"
+fi
+])

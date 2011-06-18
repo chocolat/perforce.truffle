@@ -1,0 +1,1 @@
+(menu command.add-to-depot command.open-for-editing command.revert-to-latest command.submit-changelist… --- command.diff-with-base command.diff-labels… command.diff-with-revision-in-label… --- command.annotate command.edit-lurkers --- command.offline-add-to-depot command.offline-open-for-editing command.offline-process-edits ---)
